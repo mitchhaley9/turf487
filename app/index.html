@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>App Area</title>
+    ////
+    <!-- widget stuff here -->
+    <script src="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/js/okta-sign-in.min.js" type="text/javascript"></script>
+    <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/css/okta-sign-in.min.css" type="text/css" rel="stylesheet"/>
+    <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/css/okta-theme.css" type="text/css" rel="stylesheet"/>
+    <script src="https://global.oktacdn.com/okta-signin-widget/3.2.2/js/okta-sign-in.min.js" type="text/javascript"></script>
+    <link href="https://global.oktacdn.com/okta-signin-widget/3.2.2/css/okta-sign-in.min.css" type="text/css" rel="stylesheet"/>
+    ///
+</head>
+<body>
+    <h1>Code Starts Here</h1>
+
+    <div id="okta-login-container"></div>
+        <script type="text/javascript">
+            var oktaSignIn = new OktaSignIn({
+              baseUrl: "https://dev-355285.okta.com",
+              clientId: "0oa1akm7nV3tzuIai4x6",
+              authParams: {
+                issuer: "https://dev-355285.okta.com/oauth2/default",
+                responseType: ['token', 'id_token'],
+                display: 'page'
+              }
+            });
+            if (oktaSignIn.token.hasTokensInUrl()) {
+              oktaSignIn.token.parseTokensFromUrl(
+                function success(tokens) {
+                  // Save the tokens for later use, e.g. if the page gets refreshed:
+                  // Add the token to tokenManager to automatically renew the token when needed
+                  tokens.forEach(token => {
+                    if (token.idToken) {
+          
+                      signIn.tokenManager.add('idToken', token);
+                    }
+                    if (token.accessToken) {
+                      signIn.tokenManager.add('accessToken', token);
+                    }
+                  });
+          
+                  // Say hello to the person who just signed in:
+                  var idToken = signIn.tokenManager.get('idToken');
+                  console.log('Hello, ' + idToken.claims.email);
+          
+                  // Remove the tokens from the window location hash
+                  window.location.hash='';
+                },
+                function error(err) {
+                  // handle errors as needed
+                  console.error(err);
+                }
+              );
+            } else {
+              oktaSignIn.session.get(function (res) {
+                // Session exists, show logged in state.
+                if (res.status === 'ACTIVE') {
+                  console.log('Welcome back, ' + res.login);
+                  return;
+                }
+                // No session, show the login form
+                oktaSignIn.renderEl(
+                  { el: '#okta-login-container' },
+                  function success(res) {
+                    // Nothing to do in this case, the widget will automatically redirect
+                    // the user to Okta for authentication, then back to this page if successful
+                  },
+                  function error(err) {
+                    // handle errors as needed
+                    console.error(err);
+                  }
+                );
+              });
+            }
+          </script>
+
+    
+
+
+</body>
+</html>
