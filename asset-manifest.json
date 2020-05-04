@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/deploy-react-487/static/css/main.ec111155.chunk.css",
+    "main.js": "/deploy-react-487/static/js/main.e38a16e5.chunk.js",
+    "main.js.map": "/deploy-react-487/static/js/main.e38a16e5.chunk.js.map",
+    "runtime-main.js": "/deploy-react-487/static/js/runtime-main.9f0c4c14.js",
+    "runtime-main.js.map": "/deploy-react-487/static/js/runtime-main.9f0c4c14.js.map",
+    "static/css/2.8392c5e8.chunk.css": "/deploy-react-487/static/css/2.8392c5e8.chunk.css",
+    "static/js/2.1471dcae.chunk.js": "/deploy-react-487/static/js/2.1471dcae.chunk.js",
+    "static/js/2.1471dcae.chunk.js.map": "/deploy-react-487/static/js/2.1471dcae.chunk.js.map",
+    "index.html": "/deploy-react-487/index.html",
+    "precache-manifest.29c8c4283feaba51068b13b2d88411fa.js": "/deploy-react-487/precache-manifest.29c8c4283feaba51068b13b2d88411fa.js",
+    "service-worker.js": "/deploy-react-487/service-worker.js",
+    "static/css/2.8392c5e8.chunk.css.map": "/deploy-react-487/static/css/2.8392c5e8.chunk.css.map",
+    "static/css/main.ec111155.chunk.css.map": "/deploy-react-487/static/css/main.ec111155.chunk.css.map",
+    "static/js/2.1471dcae.chunk.js.LICENSE.txt": "/deploy-react-487/static/js/2.1471dcae.chunk.js.LICENSE.txt",
+    "static/media/okta-sign-in.min.css": "/deploy-react-487/static/media/yubikeyDemo.f10c9db1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9f0c4c14.js",
+    "static/css/2.8392c5e8.chunk.css",
+    "static/js/2.1471dcae.chunk.js",
+    "static/css/main.ec111155.chunk.css",
+    "static/js/main.e38a16e5.chunk.js"
+  ]
+}
